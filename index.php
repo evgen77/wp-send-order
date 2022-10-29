@@ -71,11 +71,9 @@ function sent_telegram( $order_info ) {
 	}
 
 
-    $userId = '-1001679895586'; // Ваш id в телеграм
-    $token = '5702131517:AAE2lNejlfuBx7V4W1Lr27IHczyR4JoECWI'; // Token бота
+    $userId = ''; // Ваш id в телеграм
+    $token = ''; // Token бота
 
-    // $userId = '332646331'; // Ваш id в телеграм
-    // $token = '1122657577:AAFrbpVC00jxC5HeIzjQTv-YZ_YO_gC2GbQ'; // Token бота
 
 	file_get_contents('https://api.telegram.org/bot'. $token .'/sendMessage?chat_id='. $userId .'&text=' . urlencode($msg) . '&parse_mode=html'); // Отправляем сообщение
 }
@@ -285,7 +283,7 @@ if($order_info){
 
 	$send_order = json_encode($order_info);
 
-	$url = "http://cloud-server.work:680/Tamash_Kebab_API/hs/API/Tilda";
+	$url = "";
 	$ch = curl_init();
 	curl_setopt($ch, CURLOPT_URL, $url);
 	curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
